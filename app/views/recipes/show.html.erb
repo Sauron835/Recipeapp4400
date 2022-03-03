@@ -1,10 +1,14 @@
 <p style="color: green"><%= notice %></p>
 <% if @recipe.image? %>
-
+<div class="show-hero">
 <%= image_tag @recipe.image.url, class: "recipe-show" %>
-
+<div class="show-hero-overlay">
+  <%= render @recipe %>
+  
+</div><!-- overlay-->
+</div><!-- show hero-->
 <% end %>
-<%= render @recipe %>
+<div class="container pt-5">
 <h3>Ingredients</h3>
 <ul>
 <% for @ingredient in @recipe.ingredients %>
@@ -25,3 +29,4 @@
 
   <%= button_to "Destroy this recipe", @recipe, method: :delete %>
 </div>
+</div> <!-- container-->
